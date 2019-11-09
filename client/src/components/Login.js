@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import axiosWithAuth from "../utils/axiosWithAuth"
 
 const Login = (props) => {
- 	const [error, setError] = useState()
+ 	// const [error, setError] = useState()
 	const [data, setData] = useState({
 		username: "",
 		password: "",
@@ -28,7 +28,7 @@ const Login = (props) => {
 				props.history.push("/BubblePage")
 			})
 			.catch((error) => {
-				setError(error.response.data)
+				console.log(error.response.data)
 			})
 	}
 
