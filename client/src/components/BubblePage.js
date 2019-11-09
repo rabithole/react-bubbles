@@ -9,21 +9,25 @@ const BubblePage = () => {
   const [colorList, setColorList] = useState([]);
 
   useEffect(() => {
-  	axiosWithAuth() 
-  		.get('/api/colors')
-  		.then(result => {
-  			console.log(result)
-  			setColorList(result.data)
-  		})
-  		.catch((error) => {
-  			console.log(error)
-  		})
+    fetchData();
   }, [])
+
+  const fetchData = () => {
+    axiosWithAuth() 
+      .get('/api/colors')
+      .then(result => {
+        console.log(result)
+        setColorList(result.data)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+  }
 
   return (
     <div id='bubbleList'>
     	<h1>The Bubbles Page</h1>
-     	<ColorList colors={colorList} updateColors={setColorList} />
+     	<ColorList colors={colorList}  fetchData={fetchData} />
      	<Bubbles colors={colorList} />
     </div>
   );
