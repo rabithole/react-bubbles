@@ -39,7 +39,7 @@ const ColorList = ({ colors, fetchData }) => {
      axiosWithAuth()
       .delete(`/api/colors/${color.id}`)
       .then((result) => {
-        console.log(result)
+        // console.log(result)
         fetchData();
       })
       .catch(err => console.log(err))
