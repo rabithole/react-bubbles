@@ -22,7 +22,7 @@ const Login = (props) => {
 		axiosWithAuth()
 			.post("/api/login", data)
 			.then((result) => {
-				// console.log(result)
+				console.log(result)
 				localStorage.setItem("token", result.data.payload)
 				// Redirect the user to their account page after logging in
 				props.history.push("/BubblePage")

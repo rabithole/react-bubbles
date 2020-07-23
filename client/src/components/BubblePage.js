@@ -13,6 +13,7 @@ const BubblePage = () => {
   }, [])
 
   const fetchData = () => {
+    
     axiosWithAuth() 
       .get('/api/colors')
       .then(result => {

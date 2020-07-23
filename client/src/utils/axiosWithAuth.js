@@ -8,7 +8,7 @@ export function getToken() {
 // Create an axios helper with some predefined values
 export default function() {
 	return axios.create({
-		baseURL: "http://localhost:5000",
+		baseURL: "http://localhost:5001",
 		headers: {
 			Authorization: getToken(),
 		},
